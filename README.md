@@ -25,6 +25,7 @@ Tecnologias utilizadas durante o desenvolvimento e integrado ao sistema.
 - Buscar seus favoritos e filtrar por tags criadas
 - Remover livros dos favoritos
 - Uso da aplicação sem a necessidade de autenticação
+- Interface responsiva para diferentes tamanhos de telas
 
 ### Melhorias
 Algumas melhorias podem ser adicionadas para esta aplicação, mas que não foram desenvolvidas por questão de tempo necessário e para simplificação da execução
