@@ -5,6 +5,7 @@ import { HttpTestingController } from '@angular/common/http/testing';
 
 import { ApiService } from './api.service';
 import { BookModel } from '../models/book';
+import { apiEnvs } from '../env';
 
 // mocks
 import bookRawMock from '../../mocks/bookRaw.mock';
@@ -41,7 +42,7 @@ describe('ApiService', () => {
       expect(response).toEqual(bookMock);
     });
 
-    const req = httpMock.expectOne(`https://www.googleapis.com/books/v1/volumes/${bookRawMock.id}?key=${service.token}`);
+    const req = httpMock.expectOne(`https://www.googleapis.com/books/v1/volumes/${bookRawMock.id}?key=${apiEnvs.key}`);
     expect(req.request.method).toBe('GET');
     req.flush(bookRawMock);
   });
@@ -57,7 +58,7 @@ describe('ApiService', () => {
         .toEqual(libraryMock.books);
     });
 
-    const req = httpMock.expectOne(`https://www.googleapis.com/books/v1/users/${service.uid}/bookshelves/${libraryRawMock.id}/volumes?startIndex=0&key=${service.token}`);
+    const req = httpMock.expectOne(`https://www.googleapis.com/books/v1/users/${apiEnvs.uid}/bookshelves/${libraryRawMock.id}/volumes?startIndex=0&key=${apiEnvs.key}`);
     expect(req.request.method).toBe('GET');
     req.flush(libraryRawMock);
   });
@@ -74,7 +75,7 @@ describe('ApiService', () => {
         .toEqual(libraryMock.books);
     });
 
-    const req = httpMock.expectOne(`https://www.googleapis.com/books/v1/volumes?q=${mockQuery}&printType=books&startIndex=0&orderBy=relevance&langRestrict=&key=${service.token}`);
+    const req = httpMock.expectOne(`https://www.googleapis.com/books/v1/volumes?q=${mockQuery}&printType=books&startIndex=0&orderBy=relevance&langRestrict=&key=${apiEnvs.key}`);
     expect(req.request.method).toBe('GET');
     req.flush(libraryRawMock);
   });
