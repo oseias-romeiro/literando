@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
-    "build": "ng build -c development && mv docs/browser/* docs/. && rmdir docs/browser",
+    "build": "ng build -c development --base-href=/literando/ && mv docs/browser/* docs/. && rmdir docs/browser",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
