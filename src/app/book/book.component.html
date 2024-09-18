@@ -23,14 +23,14 @@
     <h1 data-testId="book-title">{{ bookData.volumeInfo.title }}</h1>
     <p class="text-secondary" *ngIf="bookData.volumeInfo.authors">por
       <span *ngFor="let author of bookData.volumeInfo.authors; let i = index">
-        <a href='/#search?q=inauthor:"{{ author }}"'>{{ author }}</a>{{ i < bookData.volumeInfo.authors.length - 1 ? ', ' : '' }}
+        <a href='#search?q=inauthor:"{{ author }}"'>{{ author }}</a>{{ i < bookData.volumeInfo.authors.length - 1 ? ', ' : '' }}
       </span>
     </p>
     <small *ngFor="let category of bookData.volumeInfo.categories;">
-      <a class="fs-6" href='/#search?q=subject:"{{ category }}"'>{{ category }}</a><br>
+      <a class="fs-6" href='#search?q=subject:"{{ category }}"'>{{ category }}</a><br>
     </small>
     <br>
-    <p><a href='/#search?q=inpublisher:"{{ bookData.volumeInfo.publisher }}"'>{{ bookData.volumeInfo.publisher }}</a>, {{ bookData.volumeInfo.publishedDate }}, {{ bookData.volumeInfo.pageCount }} páginas ({{ bookData.volumeInfo.language }})</p>
+    <p><a href='#search?q=inpublisher:"{{ bookData.volumeInfo.publisher }}"'>{{ bookData.volumeInfo.publisher }}</a>, {{ bookData.volumeInfo.publishedDate }}, {{ bookData.volumeInfo.pageCount }} páginas ({{ bookData.volumeInfo.language }})</p>
     <a *ngIf="bookData.accessInfo.webReaderLink" href="{{ bookData.accessInfo.webReaderLink }}" class="fs-6" target="_blank">Ler online</a>
     <br>
     <a href="{{ bookData.volumeInfo.previewLink }}" class="fs-6" target="_blank">Mais informações</a>

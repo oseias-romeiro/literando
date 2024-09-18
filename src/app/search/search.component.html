@@ -30,7 +30,7 @@
 
     <div class="row">
       <div *ngFor="let book of results" id="{{ book.id }}" class="col-sm-12 col-md-4 my-4" data-testId="book-div">
-        <a class="text-reset text-decoration-none" href="/#book/{{ book.id }}">
+        <a class="text-reset text-decoration-none" href="#book/{{ book.id }}">
           <div class="card-body text-center">
             <img class="bg-secondary" height="250px" [src]="book.volumeInfo.imageLinks?.medium || book.volumeInfo.imageLinks?.small || book.volumeInfo.imageLinks?.thumbnail || book.volumeInfo.imageLinks?.smallThumbnail || '/logo.png'" alt="thumbnail">
             <p class="my-1 text-dark fs-6">{{ book.volumeInfo.title }}</p>

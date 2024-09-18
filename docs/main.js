@@ -58948,7 +58948,7 @@ var LoadingComponent = class _LoadingComponent {
   static \u0275fac = function LoadingComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _LoadingComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LoadingComponent, selectors: [["app-loading"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 2, vars: 0, consts: [[1, "d-flex", "h-100", "w-100", "flex-row", "justify-content-center"], ["src", "/loading.gif", "height", "50", "alt", "loading image animated", 1, "align-self-center"]], template: function LoadingComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LoadingComponent, selectors: [["app-loading"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 2, vars: 0, consts: [[1, "d-flex", "h-100", "w-100", "flex-row", "justify-content-center"], ["src", "images/loading.gif", "height", "50", "alt", "loading image animated", 1, "align-self-center"]], template: function LoadingComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0);
       \u0275\u0275element(1, "img", 1);
@@ -59148,7 +59148,7 @@ function SearchComponent_div_1_div_31_Template(rf, ctx) {
     const book_r5 = ctx.$implicit;
     \u0275\u0275propertyInterpolate("id", book_r5.id);
     \u0275\u0275advance();
-    \u0275\u0275propertyInterpolate1("href", "/#book/", book_r5.id, "", \u0275\u0275sanitizeUrl);
+    \u0275\u0275propertyInterpolate1("href", "#book/", book_r5.id, "", \u0275\u0275sanitizeUrl);
     \u0275\u0275advance(2);
     \u0275\u0275property("src", (book_r5.volumeInfo.imageLinks == null ? null : book_r5.volumeInfo.imageLinks.medium) || (book_r5.volumeInfo.imageLinks == null ? null : book_r5.volumeInfo.imageLinks.small) || (book_r5.volumeInfo.imageLinks == null ? null : book_r5.volumeInfo.imageLinks.thumbnail) || (book_r5.volumeInfo.imageLinks == null ? null : book_r5.volumeInfo.imageLinks.smallThumbnail) || "/logo.png", \u0275\u0275sanitizeUrl);
     \u0275\u0275advance(2);
@@ -59753,7 +59753,7 @@ function BookComponent_div_1_p_16_span_2_Template(rf, ctx) {
     const i_r5 = ctx.index;
     const ctx_r1 = \u0275\u0275nextContext(3);
     \u0275\u0275advance();
-    \u0275\u0275propertyInterpolate1("href", '/#search?q=inauthor:"', author_r4, '"', \u0275\u0275sanitizeUrl);
+    \u0275\u0275propertyInterpolate1("href", '#search?q=inauthor:"', author_r4, '"', \u0275\u0275sanitizeUrl);
     \u0275\u0275advance();
     \u0275\u0275textInterpolate(author_r4);
     \u0275\u0275advance();
@@ -59784,7 +59784,7 @@ function BookComponent_div_1_small_17_Template(rf, ctx) {
   if (rf & 2) {
     const category_r6 = ctx.$implicit;
     \u0275\u0275advance();
-    \u0275\u0275propertyInterpolate1("href", '/#search?q=subject:"', category_r6, '"', \u0275\u0275sanitizeUrl);
+    \u0275\u0275propertyInterpolate1("href", '#search?q=subject:"', category_r6, '"', \u0275\u0275sanitizeUrl);
     \u0275\u0275advance();
     \u0275\u0275textInterpolate(category_r6);
   }
@@ -59855,7 +59855,7 @@ function BookComponent_div_1_Template(rf, ctx) {
     \u0275\u0275advance();
     \u0275\u0275property("ngForOf", ctx_r1.bookData.volumeInfo.categories);
     \u0275\u0275advance(3);
-    \u0275\u0275propertyInterpolate1("href", '/#search?q=inpublisher:"', ctx_r1.bookData.volumeInfo.publisher, '"', \u0275\u0275sanitizeUrl);
+    \u0275\u0275propertyInterpolate1("href", '#search?q=inpublisher:"', ctx_r1.bookData.volumeInfo.publisher, '"', \u0275\u0275sanitizeUrl);
     \u0275\u0275advance();
     \u0275\u0275textInterpolate(ctx_r1.bookData.volumeInfo.publisher);
     \u0275\u0275advance();
@@ -60253,7 +60253,7 @@ function LibraryComponent_div_1_div_4_Template(rf, ctx) {
   if (rf & 2) {
     const book_r2 = ctx.$implicit;
     \u0275\u0275advance();
-    \u0275\u0275propertyInterpolate1("href", "/#book/", book_r2.id, "", \u0275\u0275sanitizeUrl);
+    \u0275\u0275propertyInterpolate1("href", "#book/", book_r2.id, "", \u0275\u0275sanitizeUrl);
     \u0275\u0275advance(2);
     \u0275\u0275property("src", (book_r2.volumeInfo.imageLinks == null ? null : book_r2.volumeInfo.imageLinks.small) || (book_r2.volumeInfo.imageLinks == null ? null : book_r2.volumeInfo.imageLinks.thumbnail) || (book_r2.volumeInfo.imageLinks == null ? null : book_r2.volumeInfo.imageLinks.smallThumbnail) || "/logo.png", \u0275\u0275sanitizeUrl);
     \u0275\u0275advance(2);
@@ -60489,7 +60489,7 @@ function FavoritesComponent_div_1_Conditional_1_div_5_Template(rf, ctx) {
     \u0275\u0275advance(4);
     \u0275\u0275property("src", favorite_r6.image, \u0275\u0275sanitizeUrl);
     \u0275\u0275advance(2);
-    \u0275\u0275propertyInterpolate1("href", "/#book/", favorite_r6.id, "", \u0275\u0275sanitizeUrl);
+    \u0275\u0275propertyInterpolate1("href", "#book/", favorite_r6.id, "", \u0275\u0275sanitizeUrl);
     \u0275\u0275advance();
     \u0275\u0275textInterpolate(favorite_r6.title);
     \u0275\u0275advance(2);
@@ -60657,7 +60657,7 @@ var HeaderComponent = class _HeaderComponent {
   static \u0275fac = function HeaderComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _HeaderComponent)(\u0275\u0275directiveInject(ActivatedRoute), \u0275\u0275directiveInject(Router));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HeaderComponent, selectors: [["app-header"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 15, vars: 1, consts: [["id", "navbar", 1, "d-flex", "align-items-center"], [1, "row", "w-100"], [1, "col-md-4", "my-3"], ["href", "/", 1, "navbar-brand", "mx-5", "text-light", "d-flex", "align-items-center"], ["src", "images/logo.png", "alt", "Logo", "width", "46", "height", "46"], [1, "mx-3", "mt-3", "h3"], [1, "col-md-4", "m-3", "d-flex", "justify-content-center"], ["href", "#favorites", 1, "text-light", "fs-6", "mx-3", "align-self-center"], ["height", "20", "xmlns", "http://www.w3.org/2000/svg", "viewBox", "0 0 512 512", 1, "favorited"], ["fill", "#fff", "d", "M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"], ["method", "get", 1, "d-flex", 2, "flex-grow", "1"], ["id", "inputSearch", "type", "search", "placeholder", "buscar livro", "aria-label", "Search", "name", "q", 1, "form-control", "rounded-0", 2, "max-width", "400px", 3, "change", "value"], ["type", "button", "id", "search-button", "type", "submit", 1, "btn", "rounded-0", 3, "click"], ["src", "images/search-icon.webp", "alt", "search icon"]], template: function HeaderComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HeaderComponent, selectors: [["app-header"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 15, vars: 1, consts: [["id", "navbar", 1, "d-flex", "align-items-center"], [1, "row", "w-100"], [1, "col-md-4", "my-3"], ["href", "#/", 1, "navbar-brand", "mx-5", "text-light", "d-flex", "align-items-center"], ["src", "images/logo.png", "alt", "Logo", "width", "46", "height", "46"], [1, "mx-3", "mt-3", "h3"], [1, "col-md-4", "m-3", "d-flex", "justify-content-center"], ["href", "#favorites", 1, "text-light", "fs-6", "mx-3", "align-self-center"], ["height", "20", "xmlns", "http://www.w3.org/2000/svg", "viewBox", "0 0 512 512", 1, "favorited"], ["fill", "#fff", "d", "M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"], ["method", "get", 1, "d-flex", 2, "flex-grow", "1"], ["id", "inputSearch", "type", "search", "placeholder", "buscar livro", "aria-label", "Search", "name", "q", 1, "form-control", "rounded-0", 2, "max-width", "400px", 3, "change", "value"], ["type", "button", "id", "search-button", "type", "submit", 1, "btn", "rounded-0", 3, "click"], ["src", "images/search-icon.webp", "alt", "search icon"]], template: function HeaderComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "nav", 0)(1, "div", 1)(2, "div", 2)(3, "a", 3);
       \u0275\u0275element(4, "img", 4);

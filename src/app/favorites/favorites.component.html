@@ -14,7 +14,7 @@
               <img class="img-fluid" [src]="favorite.image" alt="Capa do livro">
             </div>
             <div class="col-md-8">
-              <a href="/#book/{{ favorite.id }}">{{ favorite.title }}</a>
+              <a href="#book/{{ favorite.id }}">{{ favorite.title }}</a>
               <p>{{ favorite.notes }}</p>
               <span *ngFor="let tag of favorite.tags" class="badge bg-warning me-1">{{ tag }}</span>
             </div>
