@@ -26,7 +26,12 @@ export class HeaderComponent implements OnInit {
 
   onSubmit() {
     console.log(this.searchQuery);
-    window.location.href = `#search/${this.searchQuery}`;
+    if(window.location.href.includes('search')) {
+      window.location.href = `#search/${this.searchQuery}`;
+      window.location.reload();
+    }else {
+      window.location.href = `#search/${this.searchQuery}`;
+    }
   }
 
 }

@@ -62,7 +62,7 @@ export class BookComponent implements OnInit {
             notes: this.notes,
             tags: this.tags,
             title: this.bookData.volumeInfo.title || 'No title',
-            image: this.bookData.volumeInfo.imageLinks?.thumbnail || this.bookData.volumeInfo.imageLinks?.small || this.bookData.volumeInfo.imageLinks?.medium || this.bookData.volumeInfo.imageLinks?.large || '/logo.png'
+            image: this.bookData.volumeInfo.imageLinks?.thumbnail || this.bookData.volumeInfo.imageLinks?.small || this.bookData.volumeInfo.imageLinks?.medium || this.bookData.volumeInfo.imageLinks?.large || 'images/logo.png'
           };
           // save to local storage
           if (this.localStorage.addFavorites(favorite)){

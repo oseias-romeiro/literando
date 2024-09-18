@@ -7,7 +7,7 @@
     <div class="col-md-4 col-sm-12 my-4" *ngFor="let book of books">
       <a class="text-reset text-decoration-none" href="#book/{{ book.id }}">
         <div class="card-body text-center">
-          <img class="bg-secondary" height="250px" [src]="book.volumeInfo.imageLinks?.small || book.volumeInfo.imageLinks?.thumbnail || book.volumeInfo.imageLinks?.smallThumbnail || '/logo.png'" alt="thumbnail">
+          <img class="bg-secondary" height="250px" [src]="book.volumeInfo.imageLinks?.small || book.volumeInfo.imageLinks?.thumbnail || book.volumeInfo.imageLinks?.smallThumbnail || 'images/logo.png'" alt="thumbnail">
           <p class="my-1 text-dark fs-5">{{ book.volumeInfo.title }}</p>
           <small class="text-secondary fw-lighter fs-6">{{ book.volumeInfo.authors }}</small>
           <p *ngIf="book.saleInfo.saleability === 'FOR_SALE'" class="text-dark fs-5">{{ book.saleInfo.amount?.toFixed(2) }} {{ book.saleInfo.currencyCode }}</p>

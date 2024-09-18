@@ -3,7 +3,7 @@
 <div *ngIf="!isLoading" class="row">
   <div class="col-md-4 col-sm-12 d-flex justify-content-center">
     <div class="text-center">
-      <img class="bg-secondary" height="250px" [src]="bookData.volumeInfo.imageLinks?.thumbnail || bookData.volumeInfo.imageLinks?.smallThumbnail || '/logo.png'" alt="Capa do livro">
+      <img class="bg-secondary" height="250px" [src]="bookData.volumeInfo.imageLinks?.thumbnail || bookData.volumeInfo.imageLinks?.smallThumbnail || 'images/logo.png'" alt="Capa do livro">
       <br>
       <p *ngIf="bookData.saleInfo.saleability === 'FOR_SALE'" class="my-1 text-dark fs-5">{{ bookData.saleInfo.amount?.toFixed(2) }} {{ bookData.saleInfo.currencyCode }}</p>
       <p *ngIf="bookData.saleInfo.saleability === 'FREE'" class="my-1 text-dark fs-5">Grátis</p>

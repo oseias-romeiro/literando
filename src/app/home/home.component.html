@@ -42,7 +42,7 @@
             <div class="col" *ngFor="let book of line;">
               <a *ngIf="book" class="text-reset text-decoration-none" href="#book/{{ book.id }}">
                 <div class="card-body text-center">
-                  <img class="bg-secondary" height="250px" [src]="book.volumeInfo.imageLinks?.thumbnail || book.volumeInfo.imageLinks?.smallThumbnail || '/logo.png'" alt="thumbnail">
+                  <img class="bg-secondary" height="250px" [src]="book.volumeInfo.imageLinks?.thumbnail || book.volumeInfo.imageLinks?.smallThumbnail || 'images/logo.png'" alt="thumbnail">
                   <p class="my-1 text-dark fs-5">{{ book.volumeInfo.title }}</p>
                   <small class="text-secondary fw-lighter fs-6">{{ book.volumeInfo.authors }}</small>
                 </div>
