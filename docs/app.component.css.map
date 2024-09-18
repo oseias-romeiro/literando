@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/app.component.scss"],
+  "sourcesContent": ["\n.container {\n    min-height: calc(100vh - 98px);\n}\n"],
+  "mappings": ";AACA,CAAA;AACI,cAAA,KAAA,MAAA,EAAA;;",
+  "names": []
+}

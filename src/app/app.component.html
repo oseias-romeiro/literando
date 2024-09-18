@@ -1,0 +1,11 @@
+<app-header></app-header>
+
+@for (alert of alerts; track alert) {
+	<ngb-alert [type]="alert.type" (closed)="close(alert)" class="text-center mb-0">{{ alert.message }}</ngb-alert>
+}
+
+<div class="container pt-5">
+  <router-outlet />
+</div>
+
+<app-footer></app-footer>

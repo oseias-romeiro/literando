@@ -1,0 +1,134 @@
+<main>
+  <ngb-carousel>
+		<ng-template ngbSlide>
+			<div class="picsum-img-wrapper">
+				<img class="cover" src="/cover1.jpg" alt="Cover 1"/>
+			</div>
+			<div class="carousel-caption">
+				<h3>Encontre livros</h3>
+				<p>Encontre livros facilmente por meio de uma busca otimizada.</p>
+			</div>
+		</ng-template>
+		<ng-template ngbSlide>
+			<div class="picsum-img-wrapper">
+				<img class="cover" src="/cover2.jpg" alt="Cover 2"/>
+			</div>
+			<div class="carousel-caption">
+				<h3>Adicione aos favoritos</h3>
+				<p>Gerencie seus livros favoritos para dar de presente ou ler no futuro.</p>
+			</div>
+		</ng-template>
+		<ng-template ngbSlide>
+			<div class="picsum-img-wrapper">
+				<img class="cover" src="/cover3.jpg" alt="Cover 3"/>
+			</div>
+			<div class="carousel-caption">
+				<h3>Facilidade</h3>
+				<p>Não é necessário uma conta para buscar e salvar seus favoritos.</p>
+			</div>
+		</ng-template>
+	</ngb-carousel>
+
+  <h4 class="mt-5">LIVROS EM ALTA <span style="color: #17a288; font-size: 16px;">(<a href="/#biblioteca/Em Alta/1031" style="color: #17a288; font-size: 16px;">view all</a>)</span></h4>
+
+  @if(isLoading){
+    <app-loading/>
+  }
+  @else {
+    <ngb-carousel class="libraryCarousel" *ngIf="!isLoading">
+      <ng-template ngbSlide *ngFor="let line of trendingBooks">
+        <div class="picsum-img-wrapper">
+          <div class="row justify-content-center">
+            <div class="col" *ngFor="let book of line;">
+              <a *ngIf="book" class="text-reset text-decoration-none" href="/#book/{{ book.id }}">
+                <div class="card-body text-center">
+                  <img class="bg-secondary" height="250px" [src]="book.volumeInfo.imageLinks?.thumbnail || book.volumeInfo.imageLinks?.smallThumbnail || '/logo.png'" alt="thumbnail">
+                  <p class="my-1 text-dark fs-5">{{ book.volumeInfo.title }}</p>
+                  <small class="text-secondary fw-lighter fs-6">{{ book.volumeInfo.authors }}</small>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  }
+  <h4 class="mt-5">Bibliotecas</h4>
+  <div class="row mb-5">
+    <a href="/#biblioteca/Biografia/1021" class="col m-2 text-decoration-none">
+      <div class="d-flex justify-content-center" style="background-repeat: no-repeat; background-size: cover; background-image: url(/libraries/biografia.webp); height: 200px; min-width: 250px;">
+        <h3 class="text-light text-center align-self-center w-100" style="background-color: rgba(0, 0, 0, 0.700);">Biografia</h3>
+      </div>
+    </a>
+    <a href="/#biblioteca/Empresas & Negócios/1028" class="col m-2 text-decoration-none">
+      <div class="d-flex justify-content-center" style="background-repeat: no-repeat; background-size: cover; background-image: url(/libraries/negocios.jpg); height: 200px; min-width: 250px;">
+        <h3 class="text-light text-center align-self-center w-100" style="background-color: rgba(0, 0, 0, 0.700);">Empresas & Negócios</h3>
+      </div>
+    </a>
+    <a href="/#biblioteca/Infantil/1027" class="col m-2 text-decoration-none">
+      <div class="d-flex justify-content-center" style="background-repeat: no-repeat; background-size: cover; background-image: url(/libraries/infantil.webp); height: 200px; min-width: 250px;">
+        <h3 class="text-light text-center align-self-center w-100" style="background-color: rgba(0, 0, 0, 0.700);">Infantil</h3>
+      </div>
+    </a>
+    <a href="/#biblioteca/Computação & Tecnologia/1033" class="col m-2 text-decoration-none">
+      <div class="d-flex justify-content-center" style="background-repeat: no-repeat; background-size: cover; background-image: url(/libraries/tecnologia.png); height: 200px; min-width: 250px;">
+        <h3 class="text-light text-center align-self-center w-100" style="background-color: rgba(0, 0, 0, 0.700);">Computação & Tecnologia</h3>
+      </div>
+    </a>
+    <a href="/#biblioteca/História/1020" class="col m-2 text-decoration-none">
+      <div class="d-flex justify-content-center" style="background-repeat: no-repeat; background-size: cover; background-image: url(/libraries/historia.webp); height: 200px; min-width: 250px;">
+        <h3 class="text-light text-center align-self-center w-100" style="background-color: rgba(0, 0, 0, 0.700);">História</h3>
+      </div>
+    </a>
+    <a href="/#biblioteca/Literatura & Ficção/1034" class="col m-2 text-decoration-none">
+      <div class="d-flex justify-content-center" style="background-repeat: no-repeat; background-size: cover; background-image: url(/libraries/literatura.webp); height: 200px; min-width: 250px;">
+        <h3 class="text-light text-center align-self-center w-100" style="background-color: rgba(0, 0, 0, 0.700);">Literatura & Ficção</h3>
+      </div>
+    </a>
+    <a href="/#biblioteca/Mistério & Investigação/1036" class="col m-2 text-decoration-none">
+      <div class="d-flex justify-content-center" style="background-repeat: no-repeat; background-size: cover; background-image: url(/libraries/misterio.webp); height: 200px; min-width: 250px;">
+        <h3 class="text-light text-center align-self-center w-100" style="background-color: rgba(0, 0, 0, 0.700);">Mistério & Investigação</h3>
+      </div>
+    </a>
+    <a href="/#biblioteca/Filosofia/1022" class="col m-2 text-decoration-none">
+      <div class="d-flex justify-content-center" style="background-repeat: no-repeat; background-size: cover; background-image: url(/libraries/filosofia.jpg); height: 200px; min-width: 250px;">
+        <h3 class="text-light text-center align-self-center w-100" style="background-color: rgba(0, 0, 0, 0.700);">Filosofia</h3>
+      </div>
+    </a>
+    <a href="/#biblioteca/Ciências Políticas/1023" class="col m-2 text-decoration-none">
+      <div class="d-flex justify-content-center" style="background-repeat: no-repeat; background-size: cover; background-image: url(/libraries/politica.jpg); height: 200px; min-width: 250px;">
+        <h3 class="text-light text-center align-self-center w-100" style="background-color: rgba(0, 0, 0, 0.700);">Ciências Políticas</h3>
+      </div>
+    </a>
+    <a href="/#biblioteca/Religião & Espiritualidade/1030" class="col m-2 text-decoration-none">
+      <div class="d-flex justify-content-center" style="background-repeat: no-repeat; background-size: cover; background-image: url(/libraries/religiao.webp); height: 200px; min-width: 250px;">
+        <h3 class="text-light text-center align-self-center w-100" style="background-color: rgba(0, 0, 0, 0.700);">Religião & Espiritualidade</h3>
+      </div>
+    </a>
+    <a href="/#biblioteca/Romance/1026" class="col m-2 text-decoration-none">
+      <div class="d-flex justify-content-center" style="background-repeat: no-repeat; background-size: cover; background-image: url(/libraries/romance.webp); height: 200px; min-width: 250px;">
+        <h3 class="text-light text-center align-self-center w-100" style="background-color: rgba(0, 0, 0, 0.700);">Romance</h3>
+      </div>
+    </a>
+    <a href="/#biblioteca/Ficção Científica & Fantasia/1037" class="col m-2 text-decoration-none">
+      <div class="d-flex justify-content-center" style="background-repeat: no-repeat; background-size: cover; background-image: url(/libraries/ficcao_cientifica.webp); height: 200px; min-width: 250px;">
+        <h3 class="text-light text-center align-self-center w-100" style="background-color: rgba(0, 0, 0, 0.700);">Ficção Científica & Fantasia</h3>
+      </div>
+    </a>
+    <a href="/#biblioteca/Auto Ajuda/1035" class="col m-2 text-decoration-none">
+      <div class="d-flex justify-content-center" style="background-repeat: no-repeat; background-size: cover; background-image: url(/libraries/ajuda.jpg); height: 200px; min-width: 250px;">
+        <h3 class="text-light text-center align-self-center w-100" style="background-color: rgba(0, 0, 0, 0.700);">Auto Ajuda</h3>
+      </div>
+    </a>
+    <a href="/#biblioteca/Ciências Sociais/1029" class="col m-2 text-decoration-none">
+      <div class="d-flex justify-content-center" style="background-repeat: no-repeat; background-size: cover; background-image: url(/libraries/social.webp); height: 200px; min-width: 250px;">
+        <h3 class="text-light text-center align-self-center w-100" style="background-color: rgba(0, 0, 0, 0.700);">Ciências Sociais</h3>
+      </div>
+    </a>
+    <a href="/#biblioteca/Esportes/1024" class="col m-2 text-decoration-none">
+      <div class="d-flex justify-content-center" style="background-repeat: no-repeat; background-size: cover; background-image: url(/libraries/esportes.jpg); height: 200px; min-width: 250px;">
+        <h3 class="text-light text-center align-self-center w-100" style="background-color: rgba(0, 0, 0, 0.700);">Esportes</h3>
+      </div>
+    </a>
+  </div>
+</main>

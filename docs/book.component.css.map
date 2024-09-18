@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/book/book.component.scss"],
+  "sourcesContent": ["\n\n#btn-modal {\n    background-color: #17a288;\n}\n\n.stars-svg {\n    cursor: pointer;\n    width: 30px;\n}\n\n.favorited {\n    width: 30px;\n}\n"],
+  "mappings": ";AAEA,CAAA;AACI,oBAAA;;AAGJ,CAAA;AACI,UAAA;AACA,SAAA;;AAGJ,CAAA;AACI,SAAA;;",
+  "names": []
+}

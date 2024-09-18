@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/home/home.component.scss"],
+  "sourcesContent": ["\n.cover {\n    min-height: 30vh;\n    max-height: 50vh;\n    width: 100%;\n}\n"],
+  "mappings": ";AACA,CAAA;AACI,cAAA;AACA,cAAA;AACA,SAAA;;",
+  "names": []
+}

@@ -1,0 +1,59 @@
+<app-loading *ngIf="isLoading"></app-loading>
+
+<div class="row" *ngIf="!isLoading && !error">
+  <div class="col-md-3">
+    <div class="card p-4">
+      <span>Ordernar por:
+        <p>
+          <button class="btn {{ orderby === 'relevance' ? 'active' : '' }}" (click)="changeOrder('relevance')">relevantes</button>
+          <button class="btn {{ orderby === 'newest' ? 'active' : '' }}" (click)="changeOrder('newest')">recentes</button>
+        </p>
+      </span>
+      
+      <span>Filtros:
+        <p>
+          <button class="btn {{ filter === 'partial' ? 'active' : '' }}" (click)="applyFilter('partial')">Parcial</button>
+          <button class="btn {{ filter === 'full' ? 'active' : '' }}" (click)="applyFilter('full')">Texto completo</button>
+          <button class="btn {{ filter === 'free-ebooks' ? 'active' : '' }}" (click)="applyFilter('free-ebooks')">Grátis</button>
+          <button class="btn {{ filter === 'paid-ebooks' ? 'active' : '' }}" (click)="applyFilter('paid-ebooks')">Pago</button>
+          <button class="btn {{ filter === 'ebooks' ? 'active' : '' }}" (click)="applyFilter('ebooks')">eBooks</button>
+        </p>
+      </span>
+      <div class="">
+        <label for="langRestrict">Linguagem:</label>
+        <input class="ms-1" type="text" id="langRestrict" style="max-width: 60px;" placeholder="pt" (input)="changeLanguage($event)" [value]="langRestrict">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <h2 class="my-3">Resultados de busca</h2>
+
+    <div class="row">
+      <div *ngFor="let book of results" id="{{ book.id }}" class="col-sm-12 col-md-4 my-4" data-testId="book-div">
+        <a class="text-reset text-decoration-none" href="/#book/{{ book.id }}">
+          <div class="card-body text-center">
+            <img class="bg-secondary" height="250px" [src]="book.volumeInfo.imageLinks?.medium || book.volumeInfo.imageLinks?.small || book.volumeInfo.imageLinks?.thumbnail || book.volumeInfo.imageLinks?.smallThumbnail || '/logo.png'" alt="thumbnail">
+            <p class="my-1 text-dark fs-6">{{ book.volumeInfo.title }}</p>
+            @if (book.volumeInfo.authors) {
+              <span *ngFor="let author of book.volumeInfo.authors; let i = index" class="text-secondary fw-lighter fs-6">
+                {{ author }}{{ i < book.volumeInfo.authors.length - 1 ? ', ' : '' }}
+              </span>
+            }
+            <p *ngIf="book.saleInfo.saleability === 'FOR_SALE'" class="text-dark fs-5">{{ book.saleInfo.amount?.toFixed(2) }} {{ book.saleInfo.currencyCode }}</p>
+            <p *ngIf="book.saleInfo.saleability === 'FREE'" class="text-dark fs-5">Grátis</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination [collectionSize]="maxPages*10" [maxSize]="8" [(page)]="page" [directionLinks]="false" (pageChange)="loadPage($event)" />
+    </div>
+  </div>
+</div>
+
+<div *ngIf="error" class="text-center">
+  <h1>Erro ao fazer a busca!</h1>
+  <p>Houve um erro na busca, tente usar outras palavras na pesquisa.</p>
+</div>
+

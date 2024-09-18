@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/header/header.component.scss"],
+  "sourcesContent": ["\n#navbar {\n    background-image: linear-gradient(to right,#FF7854 0%,#FF5079 100%);\n}\n\n#search-button {\n    background-color: #17a288;\n}\n\nform {\n    max-width: 500px;\n}"],
+  "mappings": ";AACA,CAAA;AACI;IAAA;MAAA,GAAA,KAAA;MAAA,QAAA,EAAA;MAAA,QAAA;;AAGJ,CAAA;AACI,oBAAA;;AAGJ;AACI,aAAA;;",
+  "names": []
+}
