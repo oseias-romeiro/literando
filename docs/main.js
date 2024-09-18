@@ -58960,17 +58960,21 @@ var LoadingComponent = class _LoadingComponent {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(LoadingComponent, { className: "LoadingComponent", filePath: "src/app/components/loading/loading.component.ts", lineNumber: 10 });
 })();
 
+// src/app/env.ts
+var apiEnvs = {
+  key: "AIzaSyC1DsJIWfcA6TqyINyk32Yc1CyD-UM4BEU",
+  uid: "117522004192189783614"
+};
+
 // src/app/services/api.service.ts
 var ApiService = class _ApiService {
   http;
-  token = "AIzaSyC1DsJIWfcA6TqyINyk32Yc1CyD-UM4BEU";
-  uid = "117522004192189783614";
   constructor(http) {
     this.http = http;
   }
   // search books
   searchBooks(query, startIndex = 0, orderBy = "relevance", filter2 = "", langRestrict = "") {
-    const queryReq = filter2 === "" ? `https://www.googleapis.com/books/v1/volumes?q=${query}&printType=books&startIndex=${startIndex}&orderBy=${orderBy}&langRestrict=${langRestrict}&key=${this.token}` : `https://www.googleapis.com/books/v1/volumes?q=${query}&printType=books&startIndex=${startIndex}&orderBy=${orderBy}&filter=${filter2}&langRestrict=${langRestrict}&key=${this.token}`;
+    const queryReq = filter2 === "" ? `https://www.googleapis.com/books/v1/volumes?q=${query}&printType=books&startIndex=${startIndex}&orderBy=${orderBy}&langRestrict=${langRestrict}&key=${apiEnvs.key}` : `https://www.googleapis.com/books/v1/volumes?q=${query}&printType=books&startIndex=${startIndex}&orderBy=${orderBy}&filter=${filter2}&langRestrict=${langRestrict}&key=${apiEnvs.key}`;
     return this.http.get(queryReq).pipe(map((data) => {
       console.log("data:", data);
       const totalItems = data.totalItems;
@@ -59010,7 +59014,7 @@ var ApiService = class _ApiService {
   }
   // get library by shelfId
   getLibrary(shelId, startIndex = 0) {
-    const response = this.http.get(`https://www.googleapis.com/books/v1/users/${this.uid}/bookshelves/${shelId}/volumes?startIndex=${startIndex}&key=${this.token}`);
+    const response = this.http.get(`https://www.googleapis.com/books/v1/users/${apiEnvs.uid}/bookshelves/${shelId}/volumes?startIndex=${startIndex}&key=${apiEnvs.key}`);
     return response.pipe(map((data) => {
       console.log("data:", data);
       const totalItems = data.totalItems;
@@ -59047,7 +59051,7 @@ var ApiService = class _ApiService {
   }
   // get book by id
   getBook(id) {
-    return this.http.get(`https://www.googleapis.com/books/v1/volumes/${id}?key=${this.token}`).pipe(map((book) => {
+    return this.http.get(`https://www.googleapis.com/books/v1/volumes/${id}?key=${apiEnvs.key}`).pipe(map((book) => {
       console.log("data:", book);
       const bookData = {
         id: book.id,
@@ -59150,7 +59154,7 @@ function SearchComponent_div_1_div_31_Template(rf, ctx) {
     \u0275\u0275advance();
     \u0275\u0275propertyInterpolate1("href", "#book/", book_r5.id, "", \u0275\u0275sanitizeUrl);
     \u0275\u0275advance(2);
-    \u0275\u0275property("src", (book_r5.volumeInfo.imageLinks == null ? null : book_r5.volumeInfo.imageLinks.medium) || (book_r5.volumeInfo.imageLinks == null ? null : book_r5.volumeInfo.imageLinks.small) || (book_r5.volumeInfo.imageLinks == null ? null : book_r5.volumeInfo.imageLinks.thumbnail) || (book_r5.volumeInfo.imageLinks == null ? null : book_r5.volumeInfo.imageLinks.smallThumbnail) || "/logo.png", \u0275\u0275sanitizeUrl);
+    \u0275\u0275property("src", (book_r5.volumeInfo.imageLinks == null ? null : book_r5.volumeInfo.imageLinks.medium) || (book_r5.volumeInfo.imageLinks == null ? null : book_r5.volumeInfo.imageLinks.small) || (book_r5.volumeInfo.imageLinks == null ? null : book_r5.volumeInfo.imageLinks.thumbnail) || (book_r5.volumeInfo.imageLinks == null ? null : book_r5.volumeInfo.imageLinks.smallThumbnail) || "images/logo.png", \u0275\u0275sanitizeUrl);
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(book_r5.volumeInfo.title);
     \u0275\u0275advance();
@@ -59309,7 +59313,7 @@ var SearchComponent = class _SearchComponent {
   }
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      this.query = params["q"];
+      this.query = params["query"];
       console.log("Query:", this.query);
     });
     this.loadPage(1);
@@ -59429,7 +59433,7 @@ function HomeComponent_Conditional_13_ngb_carousel_0_1_ng_template_0_div_2_a_1_T
     const book_r1 = \u0275\u0275nextContext().$implicit;
     \u0275\u0275propertyInterpolate1("href", "#book/", book_r1.id, "", \u0275\u0275sanitizeUrl);
     \u0275\u0275advance(2);
-    \u0275\u0275property("src", (book_r1.volumeInfo.imageLinks == null ? null : book_r1.volumeInfo.imageLinks.thumbnail) || (book_r1.volumeInfo.imageLinks == null ? null : book_r1.volumeInfo.imageLinks.smallThumbnail) || "/logo.png", \u0275\u0275sanitizeUrl);
+    \u0275\u0275property("src", (book_r1.volumeInfo.imageLinks == null ? null : book_r1.volumeInfo.imageLinks.thumbnail) || (book_r1.volumeInfo.imageLinks == null ? null : book_r1.volumeInfo.imageLinks.smallThumbnail) || "images/logo.png", \u0275\u0275sanitizeUrl);
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(book_r1.volumeInfo.title);
     \u0275\u0275advance(2);
@@ -59837,7 +59841,7 @@ function BookComponent_div_1_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext();
     \u0275\u0275advance(3);
-    \u0275\u0275property("src", (ctx_r1.bookData.volumeInfo.imageLinks == null ? null : ctx_r1.bookData.volumeInfo.imageLinks.thumbnail) || (ctx_r1.bookData.volumeInfo.imageLinks == null ? null : ctx_r1.bookData.volumeInfo.imageLinks.smallThumbnail) || "/logo.png", \u0275\u0275sanitizeUrl);
+    \u0275\u0275property("src", (ctx_r1.bookData.volumeInfo.imageLinks == null ? null : ctx_r1.bookData.volumeInfo.imageLinks.thumbnail) || (ctx_r1.bookData.volumeInfo.imageLinks == null ? null : ctx_r1.bookData.volumeInfo.imageLinks.smallThumbnail) || "images/logo.png", \u0275\u0275sanitizeUrl);
     \u0275\u0275advance(2);
     \u0275\u0275property("ngIf", ctx_r1.bookData.saleInfo.saleability === "FOR_SALE");
     \u0275\u0275advance();
@@ -60144,7 +60148,7 @@ var BookComponent = class _BookComponent {
           notes: this.notes,
           tags: this.tags,
           title: this.bookData.volumeInfo.title || "No title",
-          image: this.bookData.volumeInfo.imageLinks?.thumbnail || this.bookData.volumeInfo.imageLinks?.small || this.bookData.volumeInfo.imageLinks?.medium || this.bookData.volumeInfo.imageLinks?.large || "/logo.png"
+          image: this.bookData.volumeInfo.imageLinks?.thumbnail || this.bookData.volumeInfo.imageLinks?.small || this.bookData.volumeInfo.imageLinks?.medium || this.bookData.volumeInfo.imageLinks?.large || "images/logo.png"
         };
         if (this.localStorage.addFavorites(favorite)) {
           this.favorited = true;
@@ -60255,7 +60259,7 @@ function LibraryComponent_div_1_div_4_Template(rf, ctx) {
     \u0275\u0275advance();
     \u0275\u0275propertyInterpolate1("href", "#book/", book_r2.id, "", \u0275\u0275sanitizeUrl);
     \u0275\u0275advance(2);
-    \u0275\u0275property("src", (book_r2.volumeInfo.imageLinks == null ? null : book_r2.volumeInfo.imageLinks.small) || (book_r2.volumeInfo.imageLinks == null ? null : book_r2.volumeInfo.imageLinks.thumbnail) || (book_r2.volumeInfo.imageLinks == null ? null : book_r2.volumeInfo.imageLinks.smallThumbnail) || "/logo.png", \u0275\u0275sanitizeUrl);
+    \u0275\u0275property("src", (book_r2.volumeInfo.imageLinks == null ? null : book_r2.volumeInfo.imageLinks.small) || (book_r2.volumeInfo.imageLinks == null ? null : book_r2.volumeInfo.imageLinks.thumbnail) || (book_r2.volumeInfo.imageLinks == null ? null : book_r2.volumeInfo.imageLinks.smallThumbnail) || "images/logo.png", \u0275\u0275sanitizeUrl);
     \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(book_r2.volumeInfo.title);
     \u0275\u0275advance(2);
@@ -60652,7 +60656,12 @@ var HeaderComponent = class _HeaderComponent {
   }
   onSubmit() {
     console.log(this.searchQuery);
-    window.location.href = `#search/${this.searchQuery}`;
+    if (window.location.href.includes("search")) {
+      window.location.href = `#search/${this.searchQuery}`;
+      window.location.reload();
+    } else {
+      window.location.href = `#search/${this.searchQuery}`;
+    }
   }
   static \u0275fac = function HeaderComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _HeaderComponent)(\u0275\u0275directiveInject(ActivatedRoute), \u0275\u0275directiveInject(Router));
