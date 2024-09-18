@@ -2,7 +2,7 @@
 
 Projeto desenvolvido para um desafio técnico em 2024, onde foi executado o desenvolvimento de um sistema para gerenciar lista de desejos para leituras de livros.
 
-`Demo`: [portfolio.oseiasromeiro.social/literando/](http://portfolio.oseiasromeiro.social/literando/)
+`Demo`: [portfolio.oseiasromeiro.social/literando/](https://portfolio.oseiasromeiro.social/literando/)
 
 ## Desenvolvimento
 
